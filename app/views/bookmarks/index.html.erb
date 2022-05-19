@@ -1,0 +1,11 @@
+<h1>Bookmarks</h1>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.comment %>
+      <%= bookmark.list.name %>
+      <%= bookmark.movie.title %>
+      <%= link_to ('<i class="fa fa-trash"></i>').html_safe, bookmark, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>

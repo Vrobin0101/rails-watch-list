@@ -1,0 +1,16 @@
+<h2 class="m-3"><%= @list.name %></h2>
+<div class="container">
+  <div class="row">
+    <% @list.movies.each do |movie| %>
+        <div class="col-6">
+          <div class="card-product m-3">
+            <img src="<%= movie.poster_url %>" />
+            <div class="card-product-infos">
+              <h2><%= movie.title %></h2>
+              <p><strong><%= movie.bookmarks.find_by_list_id(@list.id).comment %></strong></p>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
