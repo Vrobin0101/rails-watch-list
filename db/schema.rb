@@ -68,7 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_134048) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
