@@ -1,0 +1,15 @@
+.review {
+  background-color: white;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+}
+
+.review-date {
+  color: rgba(0,0,0,0.7);
+}
+
+.review-content {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 1em;
+}

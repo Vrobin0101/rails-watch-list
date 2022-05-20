@@ -7,15 +7,34 @@
 <div class="container">
   <div class="row">
     <% @list.movies.each do |movie| %>
-        <div class="col-6">
-          <div class="card-product m-3">
-            <img src="<%= movie.poster_url %>" />
-            <div class="card-product-infos">
-              <h2><%= movie.title %></h2>
-              <p><strong><%= movie.bookmarks.find_by_list_id(@list.id).comment %></strong></p>
-            </div>
+      <div class="col-12 col-sm-8 col-lg-6">
+        <div class="card-product m-3">
+          <img src="<%= movie.poster_url %>" />
+          <div class="card-product-infos">
+            <h2><%= movie.title %></h2>
+            <p><strong><%= movie.bookmarks.find_by_list_id(@list.id).comment %></strong></p>
+            <p><%= movie.overview %></p>
           </div>
         </div>
+      </div>
     <% end %>
   </div>
+</div>
+<h2 class="m-3">What users think about this list</h2>
+<div class="container">
+  <div class="row">
+    <% @list.reviews.each do |review| %>
+      <div class="col-12">
+        <div class="review mt-3">
+          <p class="review-date"><small><%= review.created_at %></small></p>
+          <div class="review-content">
+            <p><%= review.content %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="d-flex m-3 justify-content-end">
+  <%= link_to 'Post a Review', new_list_review_path(@list), class: "btn btn-secondary text-white" %>
 </div>
