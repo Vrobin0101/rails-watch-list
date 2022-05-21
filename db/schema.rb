@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_20_155459) do
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "content"
+    t.text "content"  
     t.index ["list_id"], name: "index_reviews_on_list_id"
   end
 
