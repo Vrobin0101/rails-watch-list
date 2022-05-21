@@ -6,17 +6,20 @@
   display: flex;
 }
 
+.card-product img {
+  object-fit: cover;
+  height: 100%;
+}
+
 @media only screen and (max-width: 540px) {
   .card-product {
     flex-direction: column;
-    height: 800px;
+    height: 700px;
+    margin-bottom: 3px;
+    .img {
+      object-fit: cover;
+    }
   }
-}
-
-.card-product img {
-  height: 100%;
-  width: 300px;
-  object-fit: cover;
 }
 
 .card-product h2 {
